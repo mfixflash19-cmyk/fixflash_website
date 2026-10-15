@@ -1,4 +1,3 @@
-
 /* FIXFLASH19 Supabase Configuration */
 window.FIXFLASH_CONFIG = {
   supabaseUrl: 'https://oflzcaliagmdqijnhpvp.supabase.co',

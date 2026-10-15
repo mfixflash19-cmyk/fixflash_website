@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#030b1b">
+  <title>FixFlasH | Phone Software & Online Remote Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar" id="home">
+    <a class="brand" href="#home" aria-label="FixFlasH Home">
+      <img class="brand-logo" src="logo-round.jpg" alt="FixFlasH circular logo">
+      <span class="brand-copy"><strong>Fix<span>FlasH</span></strong><small>PHONE SOFTWARE • ONLINE REMOTE SERVICES</small></span>
+    </a>
+    <nav aria-label="Main navigation"><a class="active" href="#home">⌂ <span>Home</span></a><a href="#services">⚙ <span>Services</span></a><a href="#orders">🛒 <span>Order</span></a><a href="#wallet">▣ <span>Wallet</span></a><a href="#about">ⓘ <span>About</span></a></nav>
+    <div class="account-actions"><span id="accountStatus" class="muted"></span><button id="loginBtn" class="btn btn-outline">♙ Login</button><button id="registerBtn" class="btn btn-primary">♙ Register</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PHONE SOFTWARE • SERVER • TOOL SERVICES</p>
+        <h1>Your phone service,<br><span class="accent">all in one place.</span></h1>
+        <p class="muted">Browse services, submit an order and track its status from one simple dashboard.</p>
+        <a class="btn btn-primary explore" href="#services">Explore Services <span>→</span></a>
+      </div>
+      <div class="hero-card" id="wallet">
+        <div class="card-top"><span class="wallet-icon">▣</span> CUSTOMER WALLET</div>
+        <p class="balance-label">Available balance</p>
+        <div class="balance"><span id="heroBalance">0.00</span> <small>MMK</small></div>
+        <div class="hero-stats"><span>Orders placed</span><strong id="heroOrders">0</strong></div>
+        <div class="hero-stats"><span>Pending deposits</span><strong id="heroDeposits">0</strong></div>
+        <p class="notice">ⓘ Prototype only — no real payments or accounts.</p>
+      </div>
+    </section>
+    <section class="section" id="services">
+      <div class="section-heading"><div><p class="eyebrow">SERVICE CATALOG</p><h2>Available services</h2></div><a class="view-all" href="#services">View All Services <span>→</span></a></div>
+      <div id="serviceGrid" class="service-grid"></div>
+    </section>
+    <section class="two-col">
+      <section class="panel" id="deposit">
+        <p class="eyebrow">WALLET</p><h2>Request a deposit</h2>
+        <p class="muted small">Demo form only. No crypto transfer or balance credit is processed.</p>
+        <form id="depositForm">
+          <label>Network<select id="network"><option>USDT TRC20</option><option>USDT ERC20</option></select></label>
+          <label>Amount (USDT)<input id="depositAmount" type="number" min="1" step="0.01" placeholder="e.g. 10" required></label>
+          <label>Transaction ID (TxID)<input id="txid" type="text" placeholder="Transaction ID (TxID)" required></label>
+          <button class="btn btn-primary full" type="submit">Submit demo request</button>
+        </form>
+        <div id="depositMessage" class="message" hidden></div>
+      </section>
+      <section class="panel" id="orders">
+        <div class="section-heading compact"><div><p class="eyebrow">ORDER TRACKING</p><h2>My orders</h2></div><span id="orderCount" class="pill">0 orders</span></div>
+        <div id="orderList" class="empty-state">Login and choose a service to place an order.</div>
+      </section>
+    </section>
+    <section id="adminPanel" class="panel admin-panel" hidden>
+      <div class="section-heading"><div><p class="eyebrow">ADMIN OVERVIEW</p><h2>Admin overview</h2></div><button id="closeAdmin" class="btn btn-outline">Close</button></div>
+      <p class="notice warning">This is not a protected admin login. Do not use for real customers, balances or payments.</p>
+      <div class="admin-grid"><div><span>Demo orders</span><strong id="adminOrders">0</strong></div><div><span>Deposit requests</span><strong id="adminDeposits">0</strong></div></div>
+      <h3>Deposit requests</h3><div id="adminDepositList" class="empty-state">No demo deposit requests.</div>
+      <h3>Orders</h3><div id="adminOrderList" class="empty-state">No demo orders.</div>
+    </section>
+  </main>
+  <footer id="about"><span class="brand-mini">FixFlasH</span><span>Fast &amp; Trusted Service</span><span>Telegram: @fixflash19</span><span>Channel: t.me/fixflashsoftcn</span><button id="adminToggle" class="footer-admin">Account / Admin</button></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

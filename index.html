@@ -360,6 +360,7 @@ body.dark-theme .auth-account-email{color:#f9fafb}
  if(toggle && nav)toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');toggle.textContent=open?'×':'☰'});
  window.__ffAuthReady=false;window.__ffSignedIn=false;const views=document.querySelectorAll('.app-view'),navLinks=document.querySelectorAll('.nav-link[data-route]');
  function switchView(route){if(!route)return;if(route==='dashboard')route='auth';if((route==='history'||route==='dashboard')&&(!window.__ffAuthReady||!window.__ffSignedIn)){route='auth';const note=document.getElementById('authMessage');if(note)note.textContent=window.__ffAuthReady?'Please log in to access your account dashboard.':'Checking account session…';}views.forEach(v=>v.classList.remove('active'));const target=document.getElementById('view-'+route);if(target){target.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}navLinks.forEach(a=>a.classList.toggle('active-nav',a.dataset.route===route));if(nav.classList.contains('open')){nav.classList.remove('open');if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');toggle.textContent='☰'}}}
+ window.ffSwitchView=switchView;
  document.querySelectorAll('[data-route]').forEach(el=>el.addEventListener('click',e=>{if(el.tagName==='A')e.preventDefault();switchView(el.dataset.route)}));
  const category=document.getElementById('orderCategory'),tool=document.getElementById('selectTool'),group=document.getElementById('groupTool'),payment=document.getElementById('orderPayment');
  const quantityGroup=document.getElementById('groupQuantity'),quantitySelect=document.getElementById('selectQuantity'),planGroup=document.getElementById('groupPlan'),planSelect=document.getElementById('selectPlan');
@@ -526,7 +527,7 @@ body.dark-theme .auth-account-email{color:#f9fafb}
   const action=b.dataset.accountAction;
   ffMenuPopover.hidden=true;ffMenuToggle.setAttribute('aria-expanded','false');
   if(action==='logout'){document.getElementById('authSignOutButton')?.click();return;}
-  switchView('auth');
+  if(window.ffSwitchView)window.ffSwitchView('auth');
   if(action==='history')ffOpenAccountSection('history');
   else if(action==='profile')ffOpenAccountSection('profile');
   else ffOpenAccountSection('dashboard');
@@ -747,7 +748,7 @@ body.dark-theme .auth-account-email{color:#f9fafb}
    }else{
     const {data,error}=await authClient.auth.signInWithPassword({email,password});
     if(error)throw error;
-    renderSession(data.session);signedOut.hidden=true;signedIn.hidden=false;say('Login successful.');switchView('dashboard');
+    renderSession(data.session);signedOut.hidden=true;signedIn.hidden=false;say('Login successful.');if(window.ffSwitchView)window.ffSwitchView('dashboard');
    }
   }catch(error){say(error?.message||'Authentication failed. Please try again.',true);}
   finally{submitButton.disabled=false;submitButton.textContent=mode==='login'?'Login':'Create Account';}
@@ -767,7 +768,7 @@ body.dark-theme .auth-account-email{color:#f9fafb}
   authClient.auth.onAuthStateChange((event,session)=>{
    renderSession(session);
    if(event==='PASSWORD_RECOVERY'){signedOut.hidden=true;signedIn.hidden=true;recoveryPanel.hidden=false;say('Enter and confirm your new password below.');}
-   else if(session&&event==='SIGNED_IN'){signedOut.hidden=true;signedIn.hidden=false;switchView('dashboard');}
+   else if(session&&event==='SIGNED_IN'){signedOut.hidden=true;signedIn.hidden=false;if(window.ffSwitchView)window.ffSwitchView('dashboard');}
   });
  }else{say('Supabase library did not load. Please check your internet connection and reload the page.',true);}
  setMode('login');

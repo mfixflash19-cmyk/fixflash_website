@@ -437,6 +437,7 @@ body.dark-theme .auth-account-email{color:#f9fafb}
   loginTab.classList.toggle('active',mode==='login');
   registerTab.classList.toggle('active',mode==='register');
   confirmGroup.hidden=mode!=='register';
+  confirmGroup.style.display=mode==='register'?'':'none';
   document.getElementById('authConfirmPassword').required=mode==='register';
   forgotButton.hidden=mode!=='login';
   submitButton.textContent=mode==='login'?'Login':'Create Account';
@@ -450,6 +451,7 @@ body.dark-theme .auth-account-email{color:#f9fafb}
  }
  loginTab.addEventListener('click',()=>{recoveryPanel.hidden=true;signedOut.hidden=false;setMode('login');});
  registerTab.addEventListener('click',()=>{recoveryPanel.hidden=true;signedOut.hidden=false;setMode('register');});
+ setMode('login');
  forgotButton.addEventListener('click',async()=>{
   if(!authClient){say('Supabase could not load. Check your internet connection and reload the page.',true);return;}
   const email=document.getElementById('authEmail').value.trim();

@@ -767,7 +767,16 @@ body.dark-theme .ff-official-note{
 </form>
 <div class="ff-free-check"><a class="ff-free-check-button" href="https://i.mi.com/find/device/activationlock?_locale=en#/status?_k=tcerag" target="_blank" rel="noopener">Free Check ↗</a></div>
 <button class="button button-outline ff-detail-back" type="button" data-route="services">← Back to Server / Credit Services</button>
-</article></div></section></div><div class="app-view" id="view-order"><section class="section"><div class="wrap steps"><div><h2>No typing required. Just select and send.</h2><p class="section-copy">Choose your service, select the required options, and send your order through Telegram.</p><div class="step-list"><div class="step"><span class="step-number">1</span><div><b>Select Service &amp; Tool</b><span>Choose tool rental or credits from dropdowns.</span></div></div><div class="step"><span class="step-number">2</span><div><b>Send Order to Admin</b><span>Telegram opens with your order details.</span></div></div><div class="step"><span class="step-number">3</span><div><b>Pay &amp; Start Working</b><span>Pay via KBZ Pay, Wave Pay, or Binance Pay.</span></div></div></div></div><aside class="order-panel"><h3>Select Your Order Options</h3><p>Choose from the options below — no manual typing needed.</p><p class="ff-dashboard-note">Sign in before ordering. Your order will be saved to your account history.</p><form id="quickOrderForm"><div class="form-grid"><div class="form-group"><label for="orderCategory">Select Service Type</label><select class="form-control" id="orderCategory"><option value="Tool Rental">⏱ GSM Tool Rental</option><option value="CRD Buy">◈ CRD Buy / Credit Refill</option><option value="Tool Buy">▣ Tool License / Activation Buy</option><option value="Diagram Buy">📐 Schematic / Diagram Tool Buy</option><option value="Xiaomi FRP">★ Xiaomi FRP</option><option value="Xiaomi Account Official Unlock">📱 Xiaomi Account Official Unlock</option><option value="Brand MDM Unlock">🛡️ Tecno / Infinix / itel MDM</option><option value="Remote Service">⌁ Remote Services</option></select></div><div class="form-group" id="groupTool"><label for="selectTool">Select Tool Name &amp; Rate</label><select class="form-control" id="selectTool"></select></div><div class="form-group" id="groupQuantity" style="display:none"><label for="selectQuantity">Select CRD Quantity</label><select class="form-control" id="selectQuantity"></select></div><div class="form-group" id="groupPlan" style="display:none"><label for="selectPlan">Select License / Diagram Plan</label><select class="form-control" id="selectPlan"></select></div><div class="form-group"><label for="orderPayment">Select Payment Method</label><select class="form-control" id="orderPayment"><option>KBZ Pay</option><option>Wave Pay</option><option>Binance Pay</option></select></div><div class="order-pay-details" id="orderPayDetails" style="display:none"></div></div><button class="button button-primary" type="submit">📩 Send Order to Telegram Admin</button></form></aside></div></section></div><div class="app-view" id="view-auth">
+</article></div></section></div><div class="app-view" id="view-order"><section class="section"><div class="wrap steps"><div><h2>No typing required. Just select and send.</h2><p class="section-copy">Choose your service, select the required options, and send your order through Telegram.</p><div class="step-list"><div class="step"><span class="step-number">1</span><div><b>Select Service &amp; Tool</b><span>Choose tool rental or credits from dropdowns.</span></div></div><div class="step"><span class="step-number">2</span><div><b>Send Order to Admin</b><span>Telegram opens with your order details.</span></div></div><div class="step"><span class="step-number">3</span><div><b>Pay &amp; Start Working</b><span>Pay via KBZ Pay, Wave Pay, or Binance Pay.</span></div></div></div></div><aside class="order-panel"><h3>Select Your Order Options</h3><p>Choose from the options below — no manual typing needed.</p><p class="ff-dashboard-note">Sign in before ordering. Your order will be saved to your account history.</p><form id="quickOrderForm"><div class="form-grid"><div class="form-group"><label for="orderCategory">Select Service Type</label><select class="form-control" id="orderCategory"><option value="Tool Rental">⏱ GSM Tool Rental</option><option value="CRD Buy">◈ CRD Buy / Credit Refill</option><option value="Tool Buy">▣ Tool License / Activation Buy</option><option value="Diagram Buy">📐 Schematic / Diagram Tool Buy</option><option value="Xiaomi FRP">★ Xiaomi FRP</option><option value="Xiaomi Account Official Unlock">📱 Xiaomi Account Official Unlock</option><option value="Brand MDM Unlock">🛡️ Tecno / Infinix / itel MDM</option><option value="Remote Service">⌁ Remote Services</option></select></div><div class="form-group" id="groupTool"><label for="searchTool">Search Tool Name</label><input class="form-control" id="searchTool" type="search" placeholder="Type to search any tool..." autocomplete="off"><label for="selectTool">Select Tool Name &amp; Rate</label><select class="form-control" id="selectTool"></select><div class="form-group" id="groupCustomCrdTool" style="display:none;margin-top:10px"><label for="customCrdTool">Enter Tool Name</label><input class="form-control" id="customCrdTool" type="text" maxlength="100" placeholder="Type the CRD tool name you need"></div></div><div class="form-group" id="groupQuantity" style="display:none"><label for="selectQuantity">Enter CRD Quantity</label><input class="form-control" id="selectQuantity" type="number" inputmode="numeric" min="1" step="1" value="1" placeholder="Enter any quantity">
+<div class="ff-crd-total-panel" id="ffCrdTotalPanel" aria-live="polite">
+ <div class="ff-crd-total-row"><span>CRD Rate</span><strong>6,000 MMK / CRD</strong></div>
+ <div class="ff-crd-total-row ff-crd-total-main"><span>Total Amount</span><strong id="ffCrdTotalMMK">6,000 MMK</strong></div>
+ <div class="ff-crd-total-row"><span>Estimated USDT</span><strong id="ffCrdTotalUSDT">≈ 1.18 USDT</strong></div>
+ <label class="ff-crd-rate-label" for="ffCrdUsdtRate">USDT Rate (MMK) — editable</label>
+ <input class="form-control ff-crd-rate-input" id="ffCrdUsdtRate" type="number" inputmode="decimal" min="1" step="1" value="5100" aria-describedby="ffCrdRateNote">
+ <small id="ffCrdRateNote">Reference estimate only. Update this rate using the current Binance P2P USDT price before payment.</small>
+</div>
+</div><div class="form-group" id="groupPlan" style="display:none"><label for="selectPlan">Select License / Diagram Plan</label><select class="form-control" id="selectPlan"></select></div><div class="form-group"><label for="orderPayment">Select Payment Method</label><select class="form-control" id="orderPayment"><option>KBZ Pay</option><option>Wave Pay</option><option>Binance Pay</option></select></div><div class="order-pay-details" id="orderPayDetails" style="display:none"></div></div><button class="button button-primary" type="submit">📩 Send Order to Telegram Admin</button></form></aside></div></section></div><div class="app-view" id="view-auth">
 <section class="section">
 <div class="wrap" style="max-width:560px">
 <div class="section-heading"><div><h2 id="accountPageTitle">FixFlasH Account</h2><p class="section-copy" id="accountPageSubtitle">Login or create an account to access your FixFlasH account.</p></div></div>
@@ -968,10 +977,28 @@ body.dark-theme .ff-official-note{
  window.ffSwitchView=switchView;
  document.querySelectorAll('[data-route]').forEach(el=>el.addEventListener('click',e=>{if(el.tagName==='A')e.preventDefault();switchView(el.dataset.route)}));
  const category=document.getElementById('orderCategory'),tool=document.getElementById('selectTool'),group=document.getElementById('groupTool'),payment=document.getElementById('orderPayment');
- const quantityGroup=document.getElementById('groupQuantity'),quantitySelect=document.getElementById('selectQuantity'),planGroup=document.getElementById('groupPlan'),planSelect=document.getElementById('selectPlan');
+ const toolSearch=document.getElementById('searchTool'),customCrdGroup=document.getElementById('groupCustomCrdTool'),customCrdTool=document.getElementById('customCrdTool');
+ const quantityGroup=document.getElementById('groupQuantity'),quantityInput=document.getElementById('selectQuantity'),planGroup=document.getElementById('groupPlan'),planSelect=document.getElementById('selectPlan');
+ const crdRatePerUnit=6000,crdUsdtRate=document.getElementById('ffCrdUsdtRate');
+ const crdTotalMMK=document.getElementById('ffCrdTotalMMK'),crdTotalUSDT=document.getElementById('ffCrdTotalUSDT');
+ function updateCrdTotal(){
+  if(!quantityInput||!crdTotalMMK||!crdTotalUSDT)return;
+  const qty=Number(quantityInput.value),fx=Number(crdUsdtRate?.value);
+  if(!Number.isInteger(qty)||qty<1){
+   crdTotalMMK.textContent='Enter valid quantity';
+   crdTotalUSDT.textContent='—';
+   return;
+  }
+  const total=qty*crdRatePerUnit;
+  crdTotalMMK.textContent=total.toLocaleString('en-US')+' MMK';
+  crdTotalUSDT.textContent=Number.isFinite(fx)&&fx>0?'≈ '+(total/fx).toFixed(2)+' USDT':'Enter valid USDT rate';
+ }
+ quantityInput.addEventListener('input',updateCrdTotal);
+ crdUsdtRate.addEventListener('input',updateCrdTotal);
+ updateCrdTotal();
  const catalogs={
   'Tool Rental':['AMT Tool — 3H / 3,000 MMK','DFT Tool — 48H / 10,000 MMK','MDM Fix Tool Beta — 6H / 10,000 MMK','MRST Tool — 24H / 5,000 MMK','MST Tool — 6H / 3,000 MMK','TSM Tool — 6H / 5,000 MMK','Unlock Tool — 6H / 3,000 MMK'],
-  'CRD Buy':['Other CRD Tool — specify to Admin','360 Tool','AMT / Android Multi Tool','Arab FRP Tool','Auth Flash Pro (AFT)','BMT Pro','Best FRP Tool','BestUnlocker Pro','Cheetah Tool','Chimera Tool','CP-Tool CPT Pro','DFT Tool','Falcon FRP Tool','Falcon Multi Tool','FCK Tool','Fenix Tool Pro','FIRE FRP Tool','FRPTool Pro','Global FRP Tool','Galaxy Multi Tool','Hydra Tool','Lazy Loader','MMFRP','NCK Box / Dongle','Phoenix Service Tool','Sigma Plus','TFM Tool','TSM Tool','Ultra Auth Tool (UAT)','UAT Pro','Xiaomi DIGI-FRP Tool','Xiaomi Multi Auth Tool'],
+  'CRD Buy':['Other CRD Tool — type your tool name','360 Tool','AMT / Android Multi Tool','Arab FRP Tool','Auth Flash Pro (AFT)','BMT Pro','Best FRP Tool','BestUnlocker Pro','Cheetah Tool','Chimera Tool','CP-Tool CPT Pro','DFT Tool','Falcon FRP Tool','Falcon Multi Tool','FCK Tool','Fenix Tool Pro','FIRE FRP Tool','FRPTool Pro','Global FRP Tool','Galaxy Multi Tool','Hydra Tool','Lazy Loader','MMFRP','NCK Box / Dongle','Phoenix Service Tool','Sigma Plus','TFM Tool','TSM Tool','Ultra Auth Tool (UAT)','UAT Pro','Xiaomi DIGI-FRP Tool','Xiaomi Multi Auth Tool'],
   'Tool Buy':['AndroidWinTool','AMT / Android Multi Tool','AnonySHU Tool','BMT Pro','Cheetah Tool Pro','Cerberus Tool Pro','Chimera Tool','CP-Tool CPT Pro Xiaomi Tool','DFT Tool','EFT Pro Tool','EMT Tool','E GSM Tool','Fenix Tool Pro','Griffin-Unlocker','Hydra Tool','MDM Fix Tool','MDM Fix Pro Tool','MobileSea Service Tool (MST)','Pandora Tool','Sigma Plus','TFM Tool','TMT Pro / T-Tool Pro','TSM Tool Pro','TR Tools Pro','UAT Pro','Unlock Tool','Other License — confirm with Admin'],
   'Diagram Buy':['Borneo Schematics','EasyJTAG / EasyRepair','Orion by Estech Schematic','Other Schematic / Diagram — confirm with Admin'],
   'Xiaomi FRP':['Xiaomi FRP — confirm current price with Admin'],
@@ -982,13 +1009,42 @@ body.dark-theme .ff-official-note{
   'Tool / CRD Sales':['Tool / CRD Sales — 6,000 MMK']
  };
  const toolOptions={'Unlock Tool':'Unlock Tool — 6H / 3,000 MMK','TSM Tool':'TSM Tool — 6H / 5,000 MMK','AMT Tool':'AMT Tool — 3H / 3,000 MMK','DFT Tool':'DFT Tool — 48H / 10,000 MMK','MRST Tool':'MRST Tool — 24H / 5,000 MMK','MDM Fix Tool Beta':'MDM Fix Tool Beta — 6H / 10,000 MMK','MST Tool':'MST Tool — 6H / 3,000 MMK'};
- const crdQtyOptions=['1','2','3','4','5','6','7','8','9','10'];
  function fillSelect(select,values){select.innerHTML='';values.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o)});}
- function fillToolOptions(){const list=catalogs[category.value]||['Please contact Admin'];tool.innerHTML='';list.slice().sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'})).forEach(name=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name;tool.appendChild(opt)});}
+ function fillToolOptions(){
+  const list=catalogs[category.value]||['Please contact Admin'];
+  const previous=tool.value;
+  const query=(toolSearch?.value||'').trim().toLowerCase();
+  const sorted=list.slice().sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'}));
+  const filtered=query?sorted.filter(name=>name.toLowerCase().includes(query)):sorted;
+  tool.innerHTML='';
+  filtered.forEach(name=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name;tool.appendChild(opt)});
+  if(!filtered.length){
+   const opt=document.createElement('option');opt.value='__NO_MATCH__';opt.textContent='No matching tool — choose Other CRD Tool to type it';tool.appendChild(opt);
+  }
+  if(filtered.includes(previous))tool.value=previous;
+  if(category.value==='CRD Buy'&&!filtered.includes('Other CRD Tool — type your tool name')){
+   const opt=document.createElement('option');opt.value='Other CRD Tool — type your tool name';opt.textContent=opt.value;tool.appendChild(opt);
+  }
+  if(tool.value==='__NO_MATCH__'&&category.value==='CRD Buy'){
+   const other=[...tool.options].find(o=>o.value.startsWith('Other CRD Tool'));
+   if(other)tool.value=other.value;
+  }
+ }
  function planChoices(){const v=category.value,n=tool.value.toLowerCase();if(v==='Tool Buy'){if(n.includes('cp-tool cpt pro'))return ['12 Months (1 Year) — CP-Tool CPT Pro'];return ['3 Months','6 Months','12 Months (1 Year)','Confirm plan with Admin'];}if(v==='Diagram Buy'){if(n.includes('borneo'))return ['3 Months','6 Months','12 Months / Code — confirm availability'];return ['3 Months','6 Months','12 Months','Confirm plan with Admin'];}return [];}
- function syncExtras(){const v=category.value,isCRD=v==='CRD Buy',showPlan=v==='Tool Buy'||v==='Diagram Buy';quantityGroup.style.display=isCRD?'grid':'none';planGroup.style.display=showPlan?'grid':'none';if(isCRD)fillSelect(quantitySelect,crdQtyOptions);if(showPlan)fillSelect(planSelect,planChoices());}
- function syncCategory(){const v=category.value;group.style.display=v==='Remote Service'?'none':'grid';fillToolOptions();syncExtras();}
+ function syncExtras(){
+  const v=category.value,isCRD=v==='CRD Buy',showPlan=v==='Tool Buy'||v==='Diagram Buy';
+  quantityGroup.style.display=isCRD?'grid':'none';planGroup.style.display=showPlan?'grid':'none';
+  const isOther=isCRD&&tool.value.startsWith('Other CRD Tool');
+  customCrdGroup.style.display=isOther?'grid':'none';
+  if(!isOther)customCrdTool.value='';
+  if(showPlan)fillSelect(planSelect,planChoices());
+ }
+ function syncCategory(){
+  const v=category.value;group.style.display=v==='Remote Service'?'none':'grid';
+  toolSearch.value='';fillToolOptions();syncExtras();
+ }
  category.addEventListener('change',syncCategory);syncCategory();
+ toolSearch.addEventListener('input',()=>{fillToolOptions();syncExtras();});
  tool.addEventListener('change',syncExtras);
  document.querySelectorAll('[data-rent-tool]').forEach(btn=>btn.addEventListener('click',()=>{const name=btn.dataset.rentTool;if(name==='Tool Credits'){category.value='CRD Buy';}else{category.value='Tool Rental';const selected=toolOptions[name];syncCategory();if(selected){for(const o of tool.options){if(o.value===selected){tool.value=selected;break;}}}switchView('order');return;}syncCategory();switchView('order')}));
  document.querySelectorAll('[data-select-service]').forEach(btn=>btn.addEventListener('click',()=>{const name=btn.dataset.selectService;if(name.includes('Credits'))category.value='CRD Buy';else if(name.includes('Mi Account'))category.value='Xiaomi Account Official Unlock';else if(name.includes('Official ID Unlock'))category.value='Brand Official ID Unlock';else if(name.toLowerCase().includes('tecno')||name.includes('Infinix')||name.includes('itel'))category.value='Brand MDM Unlock';else if(name.includes('Xiaomi'))category.value='Xiaomi FRP';else category.value='Remote Service';syncCategory();switchView('order')}));
@@ -1010,9 +1066,18 @@ body.dark-theme .ff-official-note{
  document.getElementById('quickOrderForm').addEventListener('submit',async e=>{
   e.preventDefault();
   const submit=e.currentTarget.querySelector('button[type="submit"]');
-  const baseItem=group.style.display==='none'?'N/A':tool.value;
+  const selectedTool=tool.value;
+  if(selectedTool==='__NO_MATCH__'){showToast('Choose a listed tool or select Other CRD Tool.');submit.disabled=false;return;}
+  if(category.value==='CRD Buy'&&selectedTool.startsWith('Other CRD Tool')&&!customCrdTool.value.trim()){
+   showToast('Please enter the CRD tool name you need.');customCrdTool.focus();submit.disabled=false;return;
+  }
+  const quantityValue=Number(quantityInput.value);
+  if(category.value==='CRD Buy'&&(!Number.isInteger(quantityValue)||quantityValue<1)){
+   showToast('Enter a valid CRD quantity (1 or more).');quantityInput.focus();submit.disabled=false;return;
+  }
+  const baseItem=group.style.display==='none'?'N/A':(category.value==='CRD Buy'&&selectedTool.startsWith('Other CRD Tool')?customCrdTool.value.trim():selectedTool);
   const service=category.value,method=payment.value;
-  const orderDetail=service==='CRD Buy'?' · Quantity: '+quantitySelect.value:
+  const orderDetail=service==='CRD Buy'?' · Quantity: '+quantityValue+' · Total: '+(quantityValue*crdRatePerUnit).toLocaleString('en-US')+' MMK · Approx: '+(quantityValue*crdRatePerUnit/Number(crdUsdtRate.value)).toFixed(2)+' USDT':
     (service==='Tool Buy'||service==='Diagram Buy')?' · Plan: '+planSelect.value:'';
   const item=baseItem+orderDetail;
   const popup=window.open('about:blank','_blank');
@@ -1020,7 +1085,11 @@ body.dark-theme .ff-official-note{
   submit.disabled=true;const oldLabel=submit.textContent;submit.textContent='Saving Order…';
   try{
    const lines=['📩 NEW ORDER — FixFlasH','━━━━━━━━━━━━━━━━━━',`🔹 Service Type: ${service}`,`🛠 Tool / Item: ${item}`];
-   if(service==='CRD Buy')lines.push(`🔢 CRD Quantity: ${quantitySelect.value}`);
+   if(service==='CRD Buy'){
+    const crdMMK=quantityValue*crdRatePerUnit;
+    const crdUSDT=crdMMK/Number(crdUsdtRate.value);
+    lines.push(`🔢 CRD Quantity: ${quantityValue}`,`💰 CRD Rate: ${crdRatePerUnit.toLocaleString('en-US')} MMK / CRD`,`💵 Total Amount: ${crdMMK.toLocaleString('en-US')} MMK`,`🪙 Approx. USDT: ${crdUSDT.toFixed(2)} USDT (Rate: ${Number(crdUsdtRate.value).toLocaleString('en-US')} MMK/USDT)`);
+   }
    if(service==='Tool Buy'||service==='Diagram Buy')lines.push(`📅 Plan: ${planSelect.value}`);
    lines.push(`💳 Payment Method: ${method}`);
    const cloud=window.ffSupabaseClient;
@@ -2047,7 +2116,26 @@ body:not(.dark-theme) #authSignedIn .auth-signed-summary{background:#fff;color:#
 }
 </style>
 
-</body></html>
+
+<style id="FixFlasH-order-search-custom-crd">
+#view-order #searchTool{margin-bottom:9px}
+#view-order #selectTool{margin-top:2px}
+#view-order #selectQuantity{appearance:textfield;-moz-appearance:textfield}
+#view-order #selectQuantity::-webkit-inner-spin-button,
+#view-order #selectQuantity::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+#view-order #groupCustomCrdTool{display:block}
+</style>
+\n<style id="FixFlasH-crd-auto-price-calculator">
+#view-order .ff-crd-total-panel{margin-top:14px;padding:15px;border:1px solid rgba(65,190,145,.35);border-radius:14px;background:rgba(12,90,66,.18);display:grid;gap:10px}
+#view-order .ff-crd-total-row{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted,#aeb8c8);font-size:14px}
+#view-order .ff-crd-total-row strong{color:var(--text,#f4f7fb);text-align:right}
+#view-order .ff-crd-total-main{padding:10px 0;border-top:1px solid rgba(65,190,145,.22);border-bottom:1px solid rgba(65,190,145,.22);font-size:16px}
+#view-order .ff-crd-total-main strong{color:#55dda0;font-size:21px}
+#view-order .ff-crd-rate-label{font-size:13px;font-weight:700;margin:2px 0 -5px}
+#view-order .ff-crd-rate-input{min-height:44px}
+#view-order #ffCrdRateNote{color:var(--muted,#aeb8c8);font-size:12px;line-height:1.45}
+</style>
+\n</body></html>
 
 <style id="ff-xiaomi-detail-screen-breadcrumb-v1">
 .ff-open-mi-detail{display:inline-flex;justify-content:center;align-items:center;width:100%;margin-top:10px;min-height:44px;padding:10px 14px;border:1px solid rgba(56,189,248,.42);border-radius:10px;background:rgba(14,116,144,.16);color:#38bdf8;font-weight:800;cursor:pointer}
